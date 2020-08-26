@@ -18,9 +18,12 @@ public class StringEditDistance {
         for (int i = 1; i < dp.length; i++) {
             for (int j = 1; j < dp[0].length; j++) {
                 if (a[i - 1] == b[j - 1]) {
-                    dp[i][j] = dp[i - 1][j - 1];
+                    dp[i][j] = dp[i - 1][j - 1]; // no change
                 } else {
-                    dp[i][j] = Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1;
+                    int x = dp[i - 1][j]; // Delete in string1
+                    int y = dp[i][j - 1]; // Delete is string2
+                    int z = dp[i - 1][j - 1]; // Edit a string
+                    dp[i][j] = getMin(x, y, z) + 1;
                 }
             }
         }
@@ -34,6 +37,10 @@ public class StringEditDistance {
         }
         printOperations(a, b, dp);
         return dp[dp.length - 1][dp[0].length - 1];
+    }
+
+    private static int getMin(int a, int b, int c) {
+        return Math.min(Math.min(a, b), c);
     }
 
 
@@ -52,7 +59,7 @@ public class StringEditDistance {
                 i--;
                 j--;
             } else if (dp[i][j] == dp[i - 1][j] + 1) {
-                System.out.println("Delete in string1 : " + b[j - 1]);
+                System.out.println("Delete in string1 : " + a[i - 1]);
                 i--;
             } else if (dp[i][j] == dp[i][j - 1] + 1) {
                 System.out.println("Delete in string2 : " + b[j - 1]);
@@ -80,7 +87,7 @@ public class StringEditDistance {
     }
 
     public static void main(String[] args) {
-        //testCase1();
+        testCase1();
         testCase2();
     }
 }

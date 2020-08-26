@@ -19,7 +19,7 @@ public class FindFirstMissingNumberInSequentialArray {
     }
 
     private static void testCase2() {
-        System.out.println(find1(new int[] {0,1,2}));
+        System.out.println(find1(new int[] {0,1,2,4}));
     }
 
     public static void main(String[] args) {

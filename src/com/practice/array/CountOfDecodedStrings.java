@@ -24,11 +24,11 @@ public class CountOfDecodedStrings {
             intList.add(Integer.parseInt("" + encoded.charAt(index)));
         }
 
-        StringBuilder str = new StringBuilder();
+        /*StringBuilder str = new StringBuilder();
         for (int val : intList) {
             str.append(dictionary.get(val));
         }
-        set.add(str.toString());
+        set.add(str.toString());*/
 
         for (int i = 0; i < intList.size(); i++) {
             StringBuilder str1 = new StringBuilder();
@@ -46,8 +46,8 @@ public class CountOfDecodedStrings {
     }
 
     public static void main(String[] args) {
-        distinctDecoding("111").forEach(System.out::println);
-        distinctDecoding("12631").forEach(System.out::println);
+        //distinctDecoding("111").forEach(System.out::println);
+        //distinctDecoding("12631").forEach(System.out::println);
         distinctDecoding("12231").forEach(System.out::println);
     }
 }

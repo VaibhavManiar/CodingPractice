@@ -27,11 +27,11 @@ public class RatAndMazeShortestPath {
                 return node.dist;
             }
             for (int i = 0; i < row.length; i++) {
-                int x = point.x + row[i];
-                int y = point.y + col[i];
-                if (isSafeMove(maze, new Point(x, y)) && !visited[x][y]) {
-                    visited[x][y] = Boolean.TRUE;
-                    q.add(new QNode(new Point(x, y), dist + 1));
+                int nextX = point.x + row[i];
+                int nextY = point.y + col[i];
+                if (isSafeMove(maze, new Point(nextX, nextY)) && !visited[nextX][nextY]) {
+                    visited[nextX][nextY] = Boolean.TRUE;
+                    q.add(new QNode(new Point(nextX, nextY), dist + 1));
                 }
             }
         }

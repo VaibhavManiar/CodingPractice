@@ -57,7 +57,7 @@ public class MatrixLongestPathProblem {
 
     public static void main(String[] args) {
         sol(new int[][]{{1, 2, 9},
-                {5, 3, 8},
-                {4, 6, 7}});
+                        {5, 3, 8},
+                        {4, 6, 7}});
     }
 }

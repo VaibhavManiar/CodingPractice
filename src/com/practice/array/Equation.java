@@ -8,12 +8,12 @@ public class Equation {
         String[] equations = str.split("=");
         return cal(equations[0], equations[1], equations[0].contains("x"));
     }
-
+    private static final String[] operators = new String[]{"*", "/", "+", "-"};
     private static String cal(String leftEquation, String rightEquation,
                               boolean isLeftEquationContainsX) {
         int temp = 0;
         String strTemp = "";
-        String[] operators = new String[]{"*", "/", "+", "-"};
+
 
         String finalLeftEquation = leftEquation;
         if (Arrays.stream(operators).noneMatch(finalLeftEquation::contains)) {
@@ -80,6 +80,8 @@ public class Equation {
     }
 
     public static void main(String[] args) {
-        System.out.println(MissingDigit("100*12=1x00"));
+        //System.out.println(MissingDigit("100*12=1x00"));
+        System.out.println(MissingDigit("1x0*12=1200"));
+        System.out.println(MissingDigit("100*12=1200"));
     }
 }

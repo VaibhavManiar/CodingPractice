@@ -42,9 +42,9 @@ public class MatrixShortestPath {
             if (matrix[currentLocation.x + move.x][currentLocation.y + move.y] == 0 &&
                     !isVisited[currentLocation.x + move.x][currentLocation.y + move.y]) {
                 Pair nextLocation = new Pair(currentLocation.x + move.x, currentLocation.y + move.y);
-                isVisited[currentLocation.x + move.x][currentLocation.y + move.y] = Boolean.TRUE;
+                isVisited[nextLocation.x][nextLocation.y] = Boolean.TRUE;
                 int pathLength = shortestPathFromLocation(matrix, nextLocation, tempMatrix, moves, isVisited)
-                        + tempMatrix[currentLocation.x + move.x][currentLocation.y + move.y] + 1;
+                                + tempMatrix[nextLocation.x][nextLocation.y] + 1;
 
 
                 // In first move, when tempMatrix value at x,y is 0 then assign the value else if value is more then 0 then

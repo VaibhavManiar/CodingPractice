@@ -4,7 +4,7 @@ public class IsBalancedBinaryTree {
 
     public static boolean isBalanced(TreeNode treeNode) {
         return treeNode == null ||
-                Math.abs(DepthOfBTree.height(treeNode.left) - DepthOfBTree.height(treeNode.right)) < 2 &&
+                Math.abs(DepthOfTree.height(treeNode.left) - DepthOfTree.height(treeNode.right)) < 2 &&
                 isBalanced(treeNode.left) && isBalanced(treeNode.right);
     }
 

@@ -1,10 +1,7 @@
 package com.practice.array;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ZeroSumTriplets {
 
@@ -50,6 +47,21 @@ public class ZeroSumTriplets {
             this.index1 = index1;
             this.index2 = index2;
             this.index3 = index3;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Triplet)) return false;
+            Triplet triplet = (Triplet) o;
+            return index1 == triplet.index1 &&
+                    index2 == triplet.index2 &&
+                    index3 == triplet.index3;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(index1, index2, index3);
         }
     }
 

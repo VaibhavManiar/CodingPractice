@@ -1,6 +1,6 @@
 package com.practice.tree;
 
-public class DepthOfBTree {
+public class DepthOfTree {
     public static int find(TreeNode treeNode) {
         if(treeNode == null) {
             return 0;
@@ -17,17 +17,17 @@ public class DepthOfBTree {
 
     private static void testCase1() {
         TreeNode root = new TreeNode(1, null, new TreeNode(2, null, new TreeNode(3, null, null)));
-        System.out.println(find(root));
+        System.out.println(height(root));
     }
 
     private static void testCase2() {
         TreeNode root = new TreeNode(3, new TreeNode(1, null, null), new TreeNode(2, null, null));
-        System.out.println(find(root));
+        System.out.println(height(root));
     }
 
     private static void testCase3() {
         TreeNode root = new TreeNode(1, new TreeNode(2, null, null),null);
-        System.out.println(find(root));
+        System.out.println(height(root));
     }
 
     public static void main(String[] args) {

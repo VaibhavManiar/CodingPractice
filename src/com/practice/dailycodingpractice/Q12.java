@@ -2,7 +2,7 @@ package com.practice.dailycodingpractice;
 
 /**
  * <b>Question:</b>
- * There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time.
+ * There exists a staircase with N steps, and you can climb up either 1 or 2 or 3 steps at a time.
  * Given N, write a function that returns the number of unique ways you can climb the staircase.
  * The order of the steps matters.
  * <p>
@@ -36,7 +36,7 @@ public class Q12 {
     }
 
     public static void main(String[] args) {
-        int numberOfStairCases = 5;
+        int numberOfStairCases = 4;
         int r = sol(numberOfStairCases);
         System.out.println(r);
     }

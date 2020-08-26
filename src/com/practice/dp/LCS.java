@@ -3,6 +3,18 @@ package com.practice.dp;
 /**
  * Longest common subsequence
  */
+
+/*
+
+ | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+ | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+ | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+ | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+ | 0 | 1 | 1 | 2 | 2 | 2 | 2 |
+ | 0 | 1 | 2 | 2 | 2 | 2 | 2 |
+ | 0 | 1 | 2 | 2 | 3 | 3 | 3 |
+
+ */
 public class LCS {
     public static String find(char[] a, char[] b) {
         int[][] dp = new int[a.length + 1][b.length + 1];
