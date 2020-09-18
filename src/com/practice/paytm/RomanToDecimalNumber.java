@@ -2,17 +2,16 @@ package com.practice.paytm;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class RomanToDecimalNumber {
 
-    private static Map<Integer, String> decimalToRoman = new LinkedHashMap<>();
-    private static Map<String, Integer> romanToDecimal = new LinkedHashMap<>();
-
+    private static final Map<String, Integer> romanToDecimal = new LinkedHashMap<>();
+    private static final String[] M = {"", "M", "MM", "MMM"};
+    private static final String[] C = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    private static final String[] X = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+    private static final String[] I = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
     static {
-        decimalToRoman.put(1, "I");
-        decimalToRoman.put(5, "V");
-        decimalToRoman.put(10, "X");
-
         romanToDecimal.put("I", 1);
         romanToDecimal.put("V", 5);
         romanToDecimal.put("X", 10);
@@ -22,24 +21,34 @@ public class RomanToDecimalNumber {
         romanToDecimal.put("M", 1000);
     }
 
-    public static int solve(String roman) {
+    public static String decimalToRoman(int num) {
+        String thousands = M[num/1000];
+        String hundreds = C[(num%1000)/100];
+        String tens = X[(num%100)/10];
+        String ones = I[num%10];
+        return thousands + hundreds + tens + ones;
+    }
+
+    public static int romanToDecimal(String roman) {
         int len = roman.length();
-        int val = 0;
-        int prev = 0;
+        int finalValue = 0;
+        int prev = -1;
         while (len > 0) {
             String ch = String.valueOf(roman.charAt(len - 1));
-            if(romanToDecimal.get(ch) < prev) {
-                val -= romanToDecimal.get(ch);
+            int currVal = romanToDecimal.get(ch);
+            if(currVal < prev) {
+                finalValue -= currVal;
             } else {
-                val += romanToDecimal.get(ch);
+                finalValue += currVal;
             }
-            prev = romanToDecimal.get(ch);
+            prev = currVal;
             len--;
         }
-        return val;
+        return finalValue;
     }
 
     public static void main(String[] args) {
-        System.out.println(solve("CDLV"));
+        System.out.println(romanToDecimal("CDLV"));
+        System.out.println(decimalToRoman(3699));
     }
 }

@@ -1,10 +1,11 @@
 package com.practice.map;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class CustomHashMap<K, V> implements Map<K, V> {
+public class CustomHashMap<K, V> extends HashMap<K, V> {
 
     private int capacity;
     private int size = 10;

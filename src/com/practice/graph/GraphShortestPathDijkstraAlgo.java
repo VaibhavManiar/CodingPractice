@@ -1,6 +1,10 @@
 package com.practice.graph;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class GraphShortestPathDijkstraAlgo {
+    static Map<Integer, Integer> path = new HashMap<>();
     public static void solve(int[][] graph, int src) {
         boolean[] visited = new boolean[graph.length];
         int[] dist = new int[graph.length];
@@ -17,6 +21,7 @@ public class GraphShortestPathDijkstraAlgo {
 
             for (int v = 0; v < graph.length; v++) {
                 if (!visited[v] && graph[u][v] > 0 && dist[u] != Integer.MAX_VALUE && dist[v] > dist[u] + graph[u][v]) {
+                    path.put(v, u);
                     dist[v] = dist[u] + graph[u][v];
                 }
             }

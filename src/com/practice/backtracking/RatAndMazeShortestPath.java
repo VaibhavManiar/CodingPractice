@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Get rat in at x, y and get out from maze[maze.length -1][maze[0].length-1].
+ * Get rat in at x, y and get out from maze[maze.length -1][maze[0].length-1]. <br/>
  * Find the shortest from source to destination.
  */
 public class RatAndMazeShortestPath {
